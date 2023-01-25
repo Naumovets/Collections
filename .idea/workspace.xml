@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8cca5b9-4ba9-4256-892c-4a4cc6ba4e54" name="Changes" comment="Changed files structures">
-      <change afterPath="$PROJECT_DIR$/src/test/java/CarListTest.java" afterDir="false" />
+    <list default="true" id="b8cca5b9-4ba9-4256-892c-4a4cc6ba4e54" name="Changes" comment="Little changed main classes and create jUnit tests for ArrayLists">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CarArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarArrayList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CarList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CarListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CarListTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674613324555</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Little changed main classes and create jUnit tests for ArrayLists">
+      <created>1674616352956</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674616352956</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +126,7 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="added realization for ArrayList, next push will be with jUnit tests" />
     <MESSAGE value="Changed files structures" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed files structures" />
+    <MESSAGE value="Little changed main classes and create jUnit tests for ArrayLists" />
+    <option name="LAST_COMMIT_MESSAGE" value="Little changed main classes and create jUnit tests for ArrayLists" />
   </component>
 </project>

@@ -2,8 +2,8 @@ import java.util.Arrays;
 
 public class CarArrayList implements CarList{
 
-    int size = 0;
-    Car[] list = new Car[10];
+    private int size = 0;
+    private Car[] list = new Car[10];
 
 
     @Override
@@ -44,6 +44,12 @@ public class CarArrayList implements CarList{
         }
         list[size] = car;
         size++;
+    }
+
+    @Override
+    public Car get(int index){
+        checkIndex(index);
+        return list[index];
     }
 
     void checkIndex(int index){

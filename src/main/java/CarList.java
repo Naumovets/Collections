@@ -1,5 +1,3 @@
-package org.example;
-
 public interface CarList {
     int size();
     boolean remove(Car car);

@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8cca5b9-4ba9-4256-892c-4a4cc6ba4e54" name="Changes" comment="Added new collection - LinkedList and update jUnit tests for LinkedList">
+      <change afterPath="$PROJECT_DIR$/src/main/java/CarHashSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CarSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CarSetTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CarList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CarList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Car.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +56,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CarListTest.whenAdded100CarsThenMustBe100">
+  <component name="RunManager" selected="JUnit.CarSetTest">
     <configuration name="CarListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Collections" />
       <option name="PACKAGE_NAME" value="" />
@@ -83,8 +86,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CarSetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Collections" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CarSetTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarSetTest.whenAdded4TheSameElementsThenSizeMustBe101" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Collections" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CarSetTest" />
+      <option name="METHOD_NAME" value="whenAdded4TheSameElementsThenSizeMustBe101" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CarSetTest" />
+        <item itemvalue="JUnit.CarSetTest.whenAdded4TheSameElementsThenSizeMustBe101" />
         <item itemvalue="JUnit.CarListTest.whenAdded100CarsThenMustBe100" />
         <item itemvalue="JUnit.CarListTest" />
         <item itemvalue="JUnit.CarListTest.whenIndexOutOfBoundsExceptionThenThrowException" />
@@ -142,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674671959300</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added new collection - LinkedList and update jUnit tests for LinkedList">
+      <created>1674690063551</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674690063551</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

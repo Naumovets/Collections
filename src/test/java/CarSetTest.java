@@ -77,4 +77,17 @@ public class CarSetTest {
         carSet.clear();
         assertEquals(0,carSet.size());
     }
+
+    @Test
+    public void whenAddElementThenContainsWillReturnTrue(){
+        Car car = new Car("BMW",2);
+        carSet.add(car);
+        assertEquals(true,carSet.contains(car));
+    }
+
+    @Test
+    public void whenNonExistentElementInContainsThenContainsWillReturnTrue(){
+        Car car = new Car("BMW",2);
+        assertFalse(carSet.contains(car));
+    }
 }

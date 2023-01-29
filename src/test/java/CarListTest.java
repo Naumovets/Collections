@@ -79,4 +79,17 @@ public class CarListTest {
         Car carFromList = carList.get(0);
         assertEquals("BMW",carFromList.getBrand());
     }
+
+    @Test
+    public void whenAddElementThenContainsWillReturnTrue(){
+        Car car = new Car("BMW",2);
+        carList.add(car);
+        assertTrue(carList.contains(car));
+    }
+
+    @Test
+    public void whenNonExistentElementInContainsThenContainsWillReturnTrue(){
+        Car car = new Car("BMW",2);
+        assertFalse(carList.contains(car));
+    }
 }

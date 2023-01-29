@@ -94,6 +94,19 @@ public class CarHashSet implements CarSet{
         array = newArray;
     }
 
+    @Override
+    public boolean contains(Car car){
+        int id = car.hashCode() % array.length;
+        Entry current = array[id];
+        while (current!=null) {
+            if (current.value.equals(car)){
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
+
     private static class Entry{
         private Car value;
         private Entry next;

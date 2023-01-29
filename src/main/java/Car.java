@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Car {
+public class Car{
     private String brand;
     private int number;
 
@@ -28,5 +28,13 @@ public class Car {
     @Override
     public int hashCode() {
         return Objects.hash(brand, number);
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", number=" + number +
+                '}';
     }
 }

@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 public class CarLinkedList implements CarList{
 
     private Node first;
@@ -106,6 +108,27 @@ public class CarLinkedList implements CarList{
         }
         return getNode(index).value;
     }
+
+    @Override
+    public Iterator<Car> iterator(){
+        return new Iterator<Car>() {
+            Node node = first;
+            int index = 0;
+            @Override
+            public boolean hasNext() {
+                return node!=null;
+            }
+
+            @Override
+            public Car next() {
+                Car car = node.value;
+                node = node.next;
+                return car;
+
+            }
+        };
+    }
+
 
     private static class Node{
         private Node previous;

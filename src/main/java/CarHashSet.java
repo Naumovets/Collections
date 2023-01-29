@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 public class CarHashSet implements CarSet{
     private int size = 0;
     private double LOAD_FACTOR = 0.75;
@@ -105,6 +107,30 @@ public class CarHashSet implements CarSet{
             current = current.next;
         }
         return false;
+    }
+
+    @Override
+    public Iterator<Car> iterator(){
+        return new Iterator<Car>() {
+            int count = 0;
+            int index = 0;
+            Entry entry = array[index];
+            @Override
+            public boolean hasNext() {
+                return count < size;
+            }
+
+            @Override
+            public Car next() {
+                while(entry == null) {
+                    entry = array[++index];
+                }
+                Car car = entry.value;
+                entry = entry.next;
+                count++;
+                return car;
+            }
+        };
     }
 
     private static class Entry{

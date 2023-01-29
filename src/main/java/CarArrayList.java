@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 public class CarArrayList implements CarList{
 
@@ -75,6 +77,23 @@ public class CarArrayList implements CarList{
     public Car get(int index){
         checkIndex(index);
         return list[index];
+    }
+
+    @Override
+    public Iterator<Car> iterator(){
+        return new Iterator<Car>() {
+            int index = 0;
+            @Override
+            public boolean hasNext() {
+                return index < size;
+            }
+
+            @Override
+            public Car next() {
+                Car car = list[index++];
+                return car;
+            }
+        };
     }
 
     void checkIndex(int index){

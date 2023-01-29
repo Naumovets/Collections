@@ -8,10 +8,19 @@ public class CarCollectionTest {
 
     @Before
     public void setUp() throws Exception {
-        carCollection = new CarHashSet();
+        carCollection = new CarLinkedList();
         for(int i = 0; i < 100; i++){
             carCollection.add(new Car("Toyota" + i,i));
         }
+    }
+
+    @Test
+    public void testForEach(){
+        int index = 0;
+        for(Car cars : carCollection){
+            index++;
+        }
+        assertEquals(100,index);
     }
 
     @Test

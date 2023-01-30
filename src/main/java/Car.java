@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Car{
+public class Car {
     private String brand;
     private int number;
 

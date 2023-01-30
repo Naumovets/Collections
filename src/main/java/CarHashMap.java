@@ -116,7 +116,7 @@ public class CarHashMap implements CarMap{
             Set<CarOwner> keys = keySet();
             for(CarOwner key : keys){
                 int index = Math.abs(key.hashCode() % newArray.length);
-                if(newArray[index]==null){
+                if(newArray[index] ==null){
                     newArray[index] = new Entry(key,get(key),null);
                 }else{
                     Entry check = newArray[index];

@@ -1,6 +1,6 @@
 import java.util.Iterator;
 
-public class CarLinkedList implements CarList{
+public class CarLinkedList implements CarList,CarQueue {
 
     private Node first;
     private Node last;
@@ -8,18 +8,17 @@ public class CarLinkedList implements CarList{
 
     @Override
     public boolean add(Car car, int index) {
-        if(index < 0 || index >size) {
+        if (index < 0 || index > size) {
             throw new ArrayIndexOutOfBoundsException();
-        }else if(index == size){
+        } else if (index == size) {
             return add(car);
-        }
-        else{
+        } else {
             Node nodeNext = getNode(index);
             Node nodePrevious = nodeNext.previous;
-            Node newNode = new Node(nodePrevious,car,nodeNext);
-            if(nodePrevious != null){
+            Node newNode = new Node(nodePrevious, car, nodeNext);
+            if (nodePrevious != null) {
                 nodePrevious.next = newNode;
-            }else{
+            } else {
                 first = newNode;
             }
             nodeNext.previous = newNode;
@@ -30,12 +29,12 @@ public class CarLinkedList implements CarList{
 
     @Override
     public boolean add(Car car) {
-        if(size == 0){
-            first = new Node(null,car,null);
+        if (size == 0) {
+            first = new Node(null, car, null);
             last = first;
-        }else{
+        } else {
             Node secondLast = last;
-            last = new Node(secondLast,car,null);
+            last = new Node(secondLast, car, null);
             secondLast.next = last;
         }
         size++;
@@ -48,10 +47,10 @@ public class CarLinkedList implements CarList{
     }
 
     @Override
-    public boolean contains(Car car){
+    public boolean contains(Car car) {
         Node current = first;
-        for(int i = 0; i < size; i++){
-            if(current.value.equals(car)){
+        for (int i = 0; i < size; i++) {
+            if (current.value.equals(car)) {
                 return true;
             }
             current = current.next;
@@ -62,8 +61,8 @@ public class CarLinkedList implements CarList{
     @Override
     public boolean remove(Car car) {
         Node node = first;
-        for(int i = 0; i < size; i++){
-            if(node.value.equals(car)){
+        for (int i = 0; i < size; i++) {
+            if (node.value.equals(car)) {
                 return removeAt(i);
             }
             node = node.next;
@@ -73,18 +72,18 @@ public class CarLinkedList implements CarList{
 
     @Override
     public boolean removeAt(int index) {
-        if(index >= size || index < 0){
+        if (index >= size || index < 0) {
             throw new ArrayIndexOutOfBoundsException();
         }
         Node node = getNode(index);
-        if(node.previous != null){
+        if (node.previous != null) {
             node.previous.next = node.next;
-        }else{
+        } else {
             first = node.next;
         }
-        if(node.next != null){
+        if (node.next != null) {
             node.next.previous = node.previous;
-        }else{
+        } else {
             last = node.previous;
         }
 
@@ -100,23 +99,23 @@ public class CarLinkedList implements CarList{
     }
 
 
-
     @Override
     public Car get(int index) {
-        if(index >= size || index < 0){
+        if (index >= size || index < 0) {
             throw new ArrayIndexOutOfBoundsException();
         }
         return getNode(index).value;
     }
 
     @Override
-    public Iterator<Car> iterator(){
+    public Iterator<Car> iterator() {
         return new Iterator<Car>() {
             Node node = first;
-            int index = 0;
+            final int index = 0;
+
             @Override
             public boolean hasNext() {
-                return node!=null;
+                return node != null;
             }
 
             @Override
@@ -129,10 +128,25 @@ public class CarLinkedList implements CarList{
         };
     }
 
+    @Override
+    public Car peek() {
+        return size > 0 ? get(0) : null;
+//        if(size > 0){
+//            return get(0);
+//        }
+//        return null;
+    }
 
-    private static class Node{
+    @Override
+    public Car poll() {
+        Car car = get(0);
+        removeAt(0);
+        return car;
+    }
+
+    private static class Node {
         private Node previous;
-        private Car value;
+        private final Car value;
         private Node next;
 
         public Node(Node previous, Car value, Node next) {
@@ -142,9 +156,9 @@ public class CarLinkedList implements CarList{
         }
     }
 
-    private Node getNode(int index){
+    private Node getNode(int index) {
         Node node = first;
-        for(int i = 0; i < index; i++){
+        for (int i = 0; i < index; i++) {
             node = node.next;
         }
         return node;

@@ -144,4 +144,16 @@ public class CarMapTest {
         assertTrue(carMap.remove(new CarOwner(0,"name"+0,"lastname"+0)));
         assertEquals(99,carMap.size());
     }
+
+    @Test
+    public void canRemoveElementsOnlyOne(){
+        for(int i = 0; i < 100; i++){
+            carMap.put(new CarOwner(i,"name"+i,"lastname"+i),
+                    new Car("brand"+i,i));
+        }
+        assertEquals(100,carMap.size());
+        assertTrue(carMap.remove(new CarOwner(0,"name"+0,"lastname"+0)));
+        assertEquals(99,carMap.size());
+        assertFalse(carMap.remove(new CarOwner(0,"name"+0,"lastname"+0)));
+    }
 }

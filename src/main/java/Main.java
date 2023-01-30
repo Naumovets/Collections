@@ -2,21 +2,13 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Set<Integer> nums = new TreeSet<>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                if(o2 > o1){
-                    return 1;
-                }else if(o2 < o1){
-                    return -1;
-                }return 0;
-            }
-        });
+        CarMap carMap = new CarHashMap();
         for(int i = 0; i < 100; i++){
-            nums.add((int)(Math.random() * 10));
+            carMap.put(new CarOwner(i,"name"+i,"lastname"+i),
+                    new Car("brand"+i,i));
         }
-        for(int i : nums){
-            System.out.println(i);
+        for(int i = 0; i < 100; i++){
+            System.out.println(carMap.get(new CarOwner(i,"name"+i,"lastname"+i)));
         }
     }
 }

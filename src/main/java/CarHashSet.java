@@ -2,17 +2,17 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Objects;
 
-public class CarHashSet implements CarSet {
+public class CarHashSet<T> implements CarSet<T> {
 //    My new realization
 //    HashSet's realized with the help of HashMap, but values's used the same objects
 //    for every keys with the class Object
 //#######################################################
 
-    private HashMap<Car, Object> array = new HashMap<>();
+    private HashMap<T, Object> array = new HashMap<>();
     private Object obj = new Object();
 
     @Override
-    public boolean add(Car car) {
+    public boolean add(T car) {
         if (array.containsKey(car)) {
             return false;
         }
@@ -21,7 +21,7 @@ public class CarHashSet implements CarSet {
     }
 
     @Override
-    public boolean remove(Car car) {
+    public boolean remove(T car) {
         if (array.containsKey(car)) {
             array.remove(car);
             return true;
@@ -40,12 +40,12 @@ public class CarHashSet implements CarSet {
     }
 
     @Override
-    public boolean contains(Car car) {
+    public boolean contains(T car) {
         return array.containsKey(car);
     }
 
     @Override
-    public Iterator<Car> iterator() {
+    public Iterator<T> iterator() {
         return array.keySet().iterator();
     }
     //    My old realization

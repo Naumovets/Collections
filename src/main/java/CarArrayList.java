@@ -1,11 +1,10 @@
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
 
-public class CarArrayList implements CarList {
+public class CarArrayList<T> implements CarList<T> {
 
     private int size = 0;
-    private Car[] list = new Car[10];
+    private Object[] list = new Object[10];
 
 
     @Override
@@ -14,7 +13,7 @@ public class CarArrayList implements CarList {
     }
 
     @Override
-    public boolean contains(Car car) {
+    public boolean contains(T car) {
         for (int i = 0; i < size; i++) {
             if (list[i].equals(car)) {
                 return true;
@@ -24,7 +23,7 @@ public class CarArrayList implements CarList {
     }
 
     @Override
-    public boolean remove(Car car) {
+    public boolean remove(T car) {
         for (int i = 0; i < size; i++) {
             if (car.equals(list[i])) {
                 removeAt(i);
@@ -54,7 +53,7 @@ public class CarArrayList implements CarList {
     }
 
     @Override
-    public boolean add(Car car) {
+    public boolean add(T car) {
         increaseArray();
         list[size] = car;
         size++;
@@ -62,7 +61,7 @@ public class CarArrayList implements CarList {
     }
 
     @Override
-    public boolean add(Car car, int index) {
+    public boolean add(T car, int index) {
         increaseArray();
         if (index < 0 || index > size) {
             throw new ArrayIndexOutOfBoundsException();
@@ -74,14 +73,14 @@ public class CarArrayList implements CarList {
     }
 
     @Override
-    public Car get(int index) {
+    public T get(int index) {
         checkIndex(index);
-        return list[index];
+        return (T) list[index];
     }
 
     @Override
-    public Iterator<Car> iterator() {
-        return new Iterator<Car>() {
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
             int index = 0;
 
             @Override
@@ -90,8 +89,8 @@ public class CarArrayList implements CarList {
             }
 
             @Override
-            public Car next() {
-                Car car = list[index++];
+            public T next() {
+                T car = (T) list[index++];
                 return car;
             }
         };

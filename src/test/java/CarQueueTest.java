@@ -5,11 +5,11 @@ import static org.junit.Assert.*;
 
 public class CarQueueTest {
 
-    private CarQueue array;
+    private CarQueue<Car> array;
 
     @Before
     public void setUp() throws Exception {
-        array = new CarLinkedList();
+        array = new CarLinkedList<>();
         for(int i = 0; i<10; i++){
             array.add(new Car("Brand"+i,i));
         }

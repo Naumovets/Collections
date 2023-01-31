@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 public class CarMapTest {
 
-    CarMap carMap = new CarHashMap();
+    CarMap<CarOwner,Car> carMap = new CarHashMap<>();
 
     @Before
     public void setUp() throws Exception {
